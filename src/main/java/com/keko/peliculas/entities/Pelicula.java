@@ -1,6 +1,7 @@
 package com.keko.peliculas.entities;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,9 +15,16 @@ public class Pelicula implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Column(name = "fecha_estreno")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaEstreno;
+
+    @OneToOne
     private Genero genero;
-    private List<Actor> protagonistas;
+
+    // private List<Actor> protagonistas;
 
     public Long getId() {
         return id;
