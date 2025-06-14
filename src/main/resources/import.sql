@@ -3,5 +3,5 @@ INSERT INTO GENEROS(NOMBRE) VALUES('Comedia');
 INSERT INTO GENEROS(NOMBRE) VALUES('Terror');
 INSERT INTO GENEROS(NOMBRE) VALUES('Sci-Fi');
 
-INSERT INTO ACTORES(NOMBRE, URL_IMAGEN) VALUES('Hugh Jackman', 'http://algo.com');
-INSERT INTO ACTORES(NOMBRE, URL_IMAGEN) VALUES('Keanu Reeves', 'http://algo.com');
+INSERT INTO ACTORES(NOMBRE, URL_IMAGEN) VALUES('Hugh Jackman', 'https://media.revistavanityfair.es/photos/60e8601506a9cde9aea6d6f7/master/w_1280,c_limit/222727.jpg');
+INSERT INTO ACTORES(NOMBRE, URL_IMAGEN) VALUES('Keanu Reeves', 'https://media.gq.com.mx/photos/5f57d52d4464f9b88fb26729/16:9/w_1280,c_limit/Keanu-Reeves.jpg');

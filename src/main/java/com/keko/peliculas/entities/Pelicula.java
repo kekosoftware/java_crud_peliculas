@@ -1,6 +1,8 @@
 package com.keko.peliculas.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -14,17 +16,22 @@ public class Pelicula implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotEmpty(message = "El nombre no puede estar vacío")
     private String name;
 
     @Column(name = "fecha_estreno")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Debes ingresar una Fecha para el estreno")
     private Date fechaEstreno;
 
     @OneToOne
+    @NotNull(message = "Debes elegir un género")
     private Genero genero;
 
-    // private List<Actor> protagonistas;
+    @ManyToMany
+     private List<Actor> protagonistas;
 
     public Long getId() {
         return id;
@@ -58,11 +65,11 @@ public class Pelicula implements Serializable {
         this.genero = genero;
     }
 
-//    public List<Actor> getProtagonistas() {
-//        return protagonistas;
-//    }
-//
-//    public void setProtagonistas(List<Actor> protagonistas) {
-//        this.protagonistas = protagonistas;
-//    }
+    public List<Actor> getProtagonistas() {
+        return protagonistas;
+    }
+
+    public void setProtagonistas(List<Actor> protagonistas) {
+        this.protagonistas = protagonistas;
+    }
 }
