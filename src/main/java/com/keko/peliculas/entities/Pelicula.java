@@ -26,7 +26,8 @@ public class Pelicula implements Serializable {
     @NotNull(message = "Debes ingresar una Fecha para el estreno")
     private Date fechaEstreno;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "genero_id")
     @NotNull(message = "Debes elegir un género")
     private Genero genero;
 
